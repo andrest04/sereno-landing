@@ -122,14 +122,19 @@ section{padding-block:clamp(72px,10vw,128px)}
 .btn-ghost:hover{border-color:var(--indigo-soft)}
 
 /* hero */
-.hero{padding-block:clamp(40px,6vw,80px) clamp(56px,7vw,96px)}
-.hero .wrap{display:grid;gap:clamp(36px,5vw,56px)}
-.hero-copy,.hero .frame{width:100%;max-width:1000px;justify-self:center}
+/* Hero fills exactly the first screen: the screenshot takes whatever height is left */
+.hero{padding-block:clamp(20px,4vh,56px);height:calc(100vh - var(--nav-h));height:calc(100svh - var(--nav-h));min-height:520px}
+.hero .wrap{height:100%;display:flex;flex-direction:column;gap:clamp(20px,4vh,48px)}
+.hero-copy{width:100%;max-width:1000px;align-self:center}
+.hero-media{flex:1;min-height:0;display:flex;justify-content:center;align-items:flex-start;container-type:size}
+.hero-media .frame{width:min(100cqw,160cqh,1000px)}
+/* Phones: crop to the warning itself so it stays readable */
+@media (max-width:600px){.hero-media .frame{aspect-ratio:1;width:min(100cqw,100cqh)}.hero .actions{gap:8px;flex-wrap:nowrap}.hero .btn{padding:12px 13px;font-size:.88rem}}
 .hero-copy{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:end}
 @media (max-width:960px){.hero-copy{grid-template-columns:1fr}}
-.hero h1{font-size:clamp(2.3rem,4.5vw,3.7rem);font-weight:800;letter-spacing:-.035em}
+.hero h1{font-size:clamp(1.9rem,min(4.5vw,6.2vh),3.7rem);font-weight:800;letter-spacing:-.035em}
 .hero h1 span{color:var(--lamp)}
-.hero .lead{margin-bottom:28px;font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--mute);max-width:30em}
+.hero .lead{margin-bottom:clamp(16px,3vh,28px);font-size:clamp(1.05rem,1.5vw,1.2rem);color:var(--mute);max-width:30em}
 .frame{position:relative;border-radius:var(--r-frame);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);aspect-ratio:1280/800;background:#F1F3F8}
 .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s ease}
 .frame img.on{opacity:1}
@@ -320,9 +325,9 @@ footer ul strong{color:var(--chalk);font-weight:600}
         </div>
       </div>
     </div>
-    <div class="frame">
+    <div class="hero-media"><div class="frame">
       <img class="on" src="assets/screens/advertencia.png" width="1280" height="800" alt="Aviso de Sereno: este sitio puede ser phishing" data-i18n-alt="alt.warning">
-    </div>
+    </div></div>
   </div>
 </header>
 
