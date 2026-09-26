@@ -15,24 +15,31 @@ Sereno es el artefacto de la tesis *Extensión de navegador basado en ensemble S
 
 La extensión consulta un servidor que primero revisa un caché Redis de URLs ya marcadas como phishing. Si la URL no está ahí, un ensemble Stacking (Random Forest, XGBoost y LightGBM como modelos base, regresión logística como meta-modelo) emite el veredicto a partir de características léxicas y de host.
 
-La extensión está en desarrollo. Esta página presenta el concepto; los enlaces, puntajes y tiempos de la demo son datos de ejemplo, y las cifras de la sección de metas son objetivos de validación, no resultados.
+La extensión está en desarrollo. Esta página presenta el concepto; los sitios y datos que aparecen en las pantallas son de ejemplo, y las cifras de la sección de metas son objetivos de validación, no resultados.
 
 ## Contenido de la página
 
-- Demo interactiva del veredicto: sitio seguro, phishing detectado por el ensemble y phishing respondido desde el caché.
-- Los cuatro pasos de la evaluación, del clic al aviso.
+- Hero con las pantallas reales de la extensión (wireframes de Figma) en secuencia: evaluación pendiente, sitio seguro, advertencia y detalle del veredicto.
 - Comparación a escala entre la vida media de una URL de phishing (5.46 h) y el tiempo de inclusión en listas negras (4.5 días), según Lee et al. (2025).
-- Funciones para usuarios y administradores.
+- Recorrido con scroll: cada paso cambia la pantalla fija de la derecha.
+- Diagrama del flujo interno: caché Redis, rasgos de la URL, tres modelos base y meta-modelo.
+- Galería del popup (historial, primer uso, estado, filtrar, borrar) y pantallas de administración (métricas, política por dominio, caché).
 - Privacidad: qué se guarda (hash y dominio) y qué no, con cálculo del hash en el navegador.
-- Metas de validación: F1 ≥ 0.97, tiempo promedio ≤ 200 ms y SUS ≥ 68.
+- Metas de validación, origen del nombre y preguntas frecuentes.
+
+## Idiomas y temas
+
+- Español e inglés con el selector ES / EN. La primera visita usa el idioma del navegador y luego recuerda la elección.
+- Tema oscuro y tema claro. El claro usa la paleta de la extensión (índigo `#4F46E5` sobre fondos claros). Por defecto sigue el tema del sistema.
 
 ## Estructura
 
 ```
 .
-├── index.html            # Página completa (HTML, CSS y JS sin dependencias)
+├── index.html              # Página completa (HTML, CSS y JS sin dependencias)
 ├── assets/
-│   └── logo-sereno.svg   # Logo oficial, exportado desde Figma
+│   ├── logo-sereno.svg     # Logo oficial, exportado desde Figma
+│   └── screens/            # Pantallas de los wireframes de Figma (PNG)
 └── .nojekyll
 ```
 
