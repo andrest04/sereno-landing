@@ -326,7 +326,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
   <div class="wrap">
     <div>
       <h1 data-i18n="hero.title">Te avisa del phishing <span>antes</span> de que la página cargue.</h1>
-      <p class="lead" data-i18n="hero.lead">Una extensión de Chrome que revisa cada enlace en milisegundos. Pensada para quien compra y paga servicios en línea.</p>
+      <p class="lead" data-i18n="hero.lead">Es una extensión de Chrome que revisa cada enlace en milisegundos, pensada para quien compra y paga servicios en línea.</p>
       <div class="actions">
         <a class="btn btn-main" href="#como-funciona" data-i18n="hero.cta">Ver cómo funciona</a>
         <a class="btn btn-ghost" href="#pantallas" data-i18n="hero.cta2">Ver las pantallas</a>
@@ -356,7 +356,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
 
 <section class="problem" id="problema">
   <div class="wrap">
-    <h2 data-i18n="problem.title">Cuando la lista negra bloquea la página falsa, esa página ya desapareció.</h2>
+    <h2 data-i18n="problem.title">Para cuando una lista negra la bloquea, la página falsa suele haber desaparecido.</h2>
     <div class="timeline" role="img" aria-label="Vida media de una URL de phishing: 5.46 horas. Tiempo hasta entrar en una lista negra: 4.5 días (108 horas)." data-i18n-aria="problem.aria">
       <div class="tl-labels">
         <div class="tl-mark life"><strong>5.46 h</strong><span data-i18n="problem.life">vida media de una URL de phishing</span></div>
@@ -373,7 +373,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
       </div>
     </div>
     <div class="problem-foot">
-      <p class="body-copy" data-i18n="problem.body">Las listas negras dependen de que alguien reporte la página. Sereno no espera ese reporte: analiza cada dirección en el momento en que la abres, aunque nadie la haya visto antes.</p>
+      <p class="body-copy" data-i18n="problem.body">Una lista negra necesita que alguien reporte la página primero. Sereno analiza cada dirección en el momento en que la abres, aunque nadie la haya reportado.</p>
       <p class="src" data-i18n="problem.src">Fuente: Lee et al. (2025). Línea dibujada a escala.</p>
     </div>
   </div>
@@ -383,7 +383,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
   <div class="wrap">
     <div class="sec-title">
       <h2 data-i18n="story.title">Lo que ves mientras navegas.</h2>
-      <p class="body-copy" data-i18n="story.lead">Sereno solo aparece cuando tiene algo que decirte.</p>
+      <p class="body-copy" data-i18n="story.lead">Si el sitio es seguro, apenas vas a notar que está instalada.</p>
     </div>
     <div class="story">
       <ol class="steps" id="steps">
@@ -395,7 +395,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
         </li>
         <li class="step" data-shot="1">
           <h3 data-i18n="s2.t">Si es seguro, no te interrumpe</h3>
-          <p data-i18n="s2.p">El ícono de la barra cambia a verde y la página carga como siempre. Nada de ventanas de más.</p>
+          <p data-i18n="s2.p">El ícono de la barra se pone verde y la página carga como siempre, sin abrir ninguna ventana.</p>
           <span class="tag" data-i18n="s2.tag">Veredicto en menos de 200 ms (meta)</span>
           <img class="step-shot" src="assets/screens/seguro.png" width="1280" height="800" alt="" loading="lazy">
         </li>
@@ -435,7 +435,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
 <section class="inside" id="por-dentro">
   <div class="wrap">
     <div class="sec-title">
-      <h2 data-i18n="inside.title">Por dentro: primero la memoria, después los modelos.</h2>
+      <h2 data-i18n="inside.title">Por dentro, Sereno consulta primero su memoria y después los modelos.</h2>
       <p class="body-copy" data-i18n="inside.lead">La extensión no ejecuta modelos. Envía la dirección a un servidor que responde con un veredicto.</p>
     </div>
     <div class="diagram">
@@ -478,12 +478,12 @@ footer ul strong{color:var(--chalk);font-weight:600}
         <p data-i18n="n1.p">Cuando un usuario se topa con una página falsa, queda anotada. El siguiente que la abra recibe la respuesta sin esperar a los modelos.</p>
       </div>
       <div>
-        <h3 data-i18n="n2.t">Tres opiniones, un veredicto</h3>
-        <p data-i18n="n2.p">Random Forest, XGBoost y LightGBM se equivocan en casos distintos. Una regresión logística aprende a combinar sus votos. Esa técnica se llama Stacking.</p>
+        <h3 data-i18n="n2.t">Tres modelos que votan</h3>
+        <p data-i18n="n2.p">Random Forest, XGBoost y LightGBM no fallan siempre en los mismos casos. Una regresión logística aprende a combinar sus votos, y a eso se le llama Stacking.</p>
       </div>
       <div>
-        <h3 data-i18n="n3.t">Liviano de verdad</h3>
-        <p data-i18n="n3.p">Modelos clásicos de scikit-learn que corren en CPU. Sin redes neuronales ni GPU, para que el servicio funcione con recursos limitados.</p>
+        <h3 data-i18n="n3.t">Sin GPU</h3>
+        <p data-i18n="n3.p">Usa modelos clásicos de scikit-learn que corren en CPU, sin redes neuronales, para que el servicio funcione con recursos limitados.</p>
       </div>
     </div>
   </div>
@@ -497,23 +497,23 @@ footer ul strong{color:var(--chalk);font-weight:600}
     <div class="bento">
       <figure class="tall">
         <img src="assets/screens/historial.png" width="760" height="640" alt="Popup de Sereno con el historial de sitios evaluados y su veredicto" data-i18n-alt="alt.history" loading="lazy">
-        <figcaption><strong data-i18n="b1.t">Historial</strong><span data-i18n="b1.p">Cada sitio evaluado, con fecha y veredicto. Solo lo ves tú.</span></figcaption>
+        <figcaption><strong data-i18n="b1.t">Historial</strong><span data-i18n="b1.p">Muestra cada sitio evaluado con su fecha y su veredicto. Solo lo ves tú.</span></figcaption>
       </figure>
       <figure>
         <img src="assets/screens/primer-uso.png" width="760" height="640" alt="Primer paso de la bienvenida de Sereno" data-i18n-alt="alt.onboarding" loading="lazy">
-        <figcaption><strong data-i18n="b2.t">Primer uso</strong><span data-i18n="b2.p">Tres pasos para entender qué hace.</span></figcaption>
+        <figcaption><strong data-i18n="b2.t">Primer uso</strong><span data-i18n="b2.p">Tres pantallas que explican qué hace.</span></figcaption>
       </figure>
       <figure>
         <img src="assets/screens/estado.png" width="760" height="640" alt="Popup con el estado de la protección" data-i18n-alt="alt.status" loading="lazy">
-        <figcaption><strong data-i18n="b3.t">Estado de la protección</strong><span data-i18n="b3.p">Si está activa y con qué versión del modelo.</span></figcaption>
+        <figcaption><strong data-i18n="b3.t">Estado de la protección</strong><span data-i18n="b3.p">Indica si está activa y qué versión del modelo usa.</span></figcaption>
       </figure>
       <figure>
         <img src="assets/screens/filtrar.png" width="760" height="640" alt="Historial filtrado por veredicto" data-i18n-alt="alt.filter" loading="lazy">
-        <figcaption><strong data-i18n="b4.t">Filtrar</strong><span data-i18n="b4.p">Seguro, advertencia o bloqueado.</span></figcaption>
+        <figcaption><strong data-i18n="b4.t">Filtrar</strong><span data-i18n="b4.p">Por seguro, advertencia o bloqueado.</span></figcaption>
       </figure>
       <figure>
         <img src="assets/screens/borrar.png" width="760" height="640" alt="Confirmación para borrar el historial" data-i18n-alt="alt.delete" loading="lazy">
-        <figcaption><strong data-i18n="b5.t">Borrar</strong><span data-i18n="b5.p">Todo tu historial, cuando quieras.</span></figcaption>
+        <figcaption><strong data-i18n="b5.t">Borrar</strong><span data-i18n="b5.p">Borra todo tu historial cuando quieras.</span></figcaption>
       </figure>
     </div>
     <p class="screens-note" data-i18n="screens.note">Pantallas del diseño de fidelidad media hecho en Figma. Los sitios y los datos que aparecen son de ejemplo.</p>
@@ -574,7 +574,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
 <section id="metas">
   <div class="wrap">
     <div class="sec-title">
-      <h2 data-i18n="goals.title">Tres números que Sereno tiene que cumplir.</h2>
+      <h2 data-i18n="goals.title">Las tres metas que Sereno tiene que cumplir.</h2>
     </div>
     <div class="goals">
       <div class="goal"><strong><small>≥</small>0.97</strong><span data-i18n="g1.t">F1 del ensemble</span><p data-i18n="g1.p">Detectar el phishing real sin marcar páginas legítimas.</p></div>
@@ -590,7 +590,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
     <img src="assets/logo-sereno.svg" width="160" height="159" alt="Logo de Sereno: un vigilante con sombrero de copa y farol" data-i18n-alt="alt.logo" loading="lazy">
     <div>
       <h2 data-i18n="name.title">¿Por qué Sereno?</h2>
-      <p class="body-copy" data-i18n="name.p">Los serenos eran vigilantes nocturnos que recorrían las calles con un farol y cantaban la hora y el estado del cielo. Si todo estaba en calma, terminaban con <q>¡y sereno!</q> Sereno hace esa ronda en tus pestañas.</p>
+      <p class="body-copy" data-i18n="name.p">Los serenos eran vigilantes nocturnos que recorrían las calles con un farol y cantaban la hora y el estado del cielo. Si todo estaba en calma, terminaban con <q>¡y sereno!</q> La extensión hace algo parecido con tus pestañas.</p>
     </div>
   </div>
 </section>
@@ -651,32 +651,32 @@ footer ul strong{color:var(--chalk);font-weight:600}
   var EN = {
     "nav.how":"How it works","nav.screens":"Screens","nav.privacy":"Privacy","nav.faq":"FAQ",
     "hero.title":"Flags phishing links <span>before</span> the page loads.",
-    "hero.lead":"A Chrome extension that checks every link in milliseconds. Built for people who shop and pay for services online.",
+    "hero.lead":"It is a Chrome extension that checks every link in milliseconds, built for people who shop and pay for services online.",
     "hero.cta":"See how it works","hero.cta2":"View the screens",
-    "problem.title":"By the time a blocklist catches a fake page, the page is already gone.",
+    "problem.title":"By the time a blocklist catches a fake page, the page has usually disappeared.",
     "problem.aria":"Average lifetime of a phishing URL: 5.46 hours. Time until it reaches a blocklist: 4.5 days (108 hours).",
     "problem.life":"average lifetime of a phishing URL","problem.days":"4.5 days","problem.list":"until a blocklist includes it",
-    "problem.body":"Blocklists wait for someone to report the page. Sereno doesn't wait: it checks every address the moment you open it, even if nobody has seen it before.",
+    "problem.body":"A blocklist needs someone to report the page first. Sereno checks every address the moment you open it, even if nobody has reported it.",
     "problem.src":"Source: Lee et al. (2025). Timeline drawn to scale.",
-    "story.title":"What you see while you browse.","story.lead":"Sereno only shows up when it has something to tell you.",
+    "story.title":"What you see while you browse.","story.lead":"When a site is safe, you will barely notice it is installed.",
     "s1.t":"You open a link","s1.p":"From an email, a text message or an ad. Sereno reads the address before the page loads. If the answer takes a moment, it tells you and asks you to hold off on payment details.",
-    "s2.t":"If it's safe, it stays out of the way","s2.p":"The toolbar icon turns green and the page loads as usual. No extra windows.","s2.tag":"Verdict in under 200 ms (target)",
+    "s2.t":"If it's safe, it stays out of the way","s2.p":"The toolbar icon turns green and the page loads as usual, without opening any window.","s2.tag":"Verdict in under 200 ms (target)",
     "s3.t":"If it looks like phishing, it stops you","s3.p":"The warning appears over the page before you type your card number or password. You decide: go back or continue at your own risk.","s3.tag":"Warning inside the tab",
     "s4.t":"It tells you why","s4.p":"One click shows the risk level, the model score, the date, and whether the verdict came from the model or the cache.","s4.tag":"Verdict details",
     "s5.t":"And blocks what the policy forbids","s5.p":"If an administrator blocked the domain, there is no button to continue. Your data never gets sent.","s5.tag":"Per-domain policy",
-    "inside.title":"Under the hood: memory first, models second.","inside.lead":"The extension doesn't run any models. It sends the address to a server that answers with a verdict.",
+    "inside.title":"Under the hood, Sereno checks its memory first and the models second.","inside.lead":"The extension doesn't run any models. It sends the address to a server that answers with a verdict.",
     "dg.title":"How Sereno evaluates a URL","dg.hit":"already flagged","dg.miss":"new","dg.loop":"if it's phishing, it goes into the shared cache",
     "dg.url":"Link","dg.cache":"Redis cache","dg.ttl":"kept for 7 days","dg.fast":"Instant verdict","dg.fastsub":"no recomputation",
     "dg.feat":"URL features","dg.featsub":"lexical and domain","dg.meta":"Logistic reg.","dg.metasub":"combines the 3 votes","dg.verdict":"Verdict",
     "n1.t":"Shared memory","n1.p":"When one user runs into a fake page, it gets flagged. The next person who opens it gets an answer without waiting for the models.",
-    "n2.t":"Three opinions, one verdict","n2.p":"Random Forest, XGBoost and LightGBM make different mistakes. A logistic regression learns how to combine their votes. The technique is called stacking.",
-    "n3.t":"Actually lightweight","n3.p":"Classic scikit-learn models that run on CPU. No neural networks and no GPU, so the service works on limited resources.",
+    "n2.t":"Three models that vote","n2.p":"Random Forest, XGBoost and LightGBM don't always fail on the same cases. A logistic regression learns how to combine their votes, which is what stacking means.",
+    "n3.t":"No GPU","n3.p":"It uses classic scikit-learn models that run on CPU, with no neural networks, so the service works on limited resources.",
     "screens.title":"Your history and your account, in the popup.",
-    "b1.t":"History","b1.p":"Every site checked, with date and verdict. Only you can see it.",
-    "b2.t":"First run","b2.p":"Three steps to understand what it does.",
-    "b3.t":"Protection status","b3.p":"Whether it's on and which model version it uses.",
-    "b4.t":"Filter","b4.p":"Safe, warning or blocked.",
-    "b5.t":"Delete","b5.p":"Your whole history, whenever you want.",
+    "b1.t":"History","b1.p":"Shows every site checked, with its date and verdict. Only you can see it.",
+    "b2.t":"First run","b2.p":"Three screens that explain what it does.",
+    "b3.t":"Protection status","b3.p":"Tells you whether it is on and which model version it uses.",
+    "b4.t":"Filter","b4.p":"By safe, warning or blocked.",
+    "b5.t":"Delete","b5.p":"Delete your whole history whenever you want.",
     "screens.note":"Screens from the mid-fidelity design made in Figma, shown in Spanish. Sites and data are examples.",
     "admin.title":"For administrators.","admin.t0":"Metrics","admin.t1":"Domain policy","admin.t2":"Cache",
     "priv.title":"Sereno doesn't store your links.",
@@ -685,13 +685,13 @@ footer ul strong{color:var(--chalk);font-weight:600}
     "priv.label":"Try any address","priv.help":"Everything is computed in your browser. Nothing is sent.",
     "priv.keep":"Stored","priv.hash":"Example fingerprint (SHA-256)","priv.domain":"Domain",
     "priv.drop":"Not stored","priv.path":"Path","priv.query":"Parameters","priv.content":"Page content","priv.contentv":"forms, text, passwords",
-    "goals.title":"Three numbers Sereno has to hit.",
+    "goals.title":"The three targets Sereno has to hit.",
     "g1.t":"Ensemble F1 score","g1.p":"Catch real phishing without flagging legitimate pages.",
     "g2.t":"Average response time","g2.p":"From the evaluation request to the verdict.",
     "g3.t":"SUS score","g3.p":"Usability measured with the System Usability Scale, answered by users.",
     "goals.note":"These are the validation targets. They are not results yet.",
     "name.title":"Why \"Sereno\"?",
-    "name.p":"Serenos were night watchmen who walked the streets with a lantern, calling out the time and the weather. When all was calm, they ended with <q>¡y sereno!</q> (and all is clear). Sereno does that round in your tabs.",
+    "name.p":"Serenos were night watchmen who walked the streets with a lantern, calling out the time and the weather. When all was calm, they ended with <q>¡y sereno!</q> (and all is clear). The extension does something similar with your tabs.",
     "faq.title":"Frequently asked questions",
     "q1":"Does Sereno read the pages I visit?","a1":"No. It only analyzes the address (URL). It doesn't look at the HTML, the forms or anything you type.",
     "q2":"What data does it store?","a2":"For each address, a fingerprint (hash) and the domain. Your history is tied to your account and you can delete it any time.",
