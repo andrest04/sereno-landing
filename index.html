@@ -150,6 +150,8 @@ section{padding-block:clamp(72px,10vw,128px)}
 .race-clock{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:28px;color:var(--mute);font-size:.95rem}
 .race-num{font-size:clamp(2.6rem,5vw,3.6rem);font-weight:700;letter-spacing:-.04em;line-height:1;color:var(--chalk);font-variant-numeric:tabular-nums}
 .race-unit{font-size:1.2rem;font-weight:600;color:var(--chalk)}
+.race-eq{font-size:1.2rem;font-weight:600;color:var(--chalk);transition:opacity .3s var(--ease-out),transform .3s var(--ease-out)}
+.race-clock.pending .race-eq{opacity:0;transform:translateX(-4px)}
 .race-rows{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .race-row,.race-axis{display:grid;grid-template-columns:var(--label) minmax(0,1fr) var(--val);align-items:center;gap:20px}
 .race-row{padding-block:12px;transition:opacity .2s var(--ease-out)}
@@ -370,7 +372,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
   <div class="wrap">
     <h2 data-i18n="problem.title">Para cuando una lista negra la bloquea, la página falsa suele haber desaparecido.</h2>
     <div class="race" id="race">
-      <p class="race-clock" aria-hidden="true"><span class="race-num" id="race-num">108</span><span class="race-unit">h</span><span data-i18n="race.clock">desde que se publica la página falsa</span></p>
+      <p class="race-clock" aria-hidden="true"><span class="race-num" id="race-num">108</span><span class="race-unit">h</span><span class="race-eq" data-i18n="race.eq">= 4.5 días</span><span data-i18n="race.clock">desde que se publica la página falsa</span></p>
       <ol class="race-rows" aria-hidden="true">
         <li class="race-row is-sereno" data-end="0">
           <span class="race-label"><span class="race-key"></span><span data-i18n="race.sereno">Sereno la revisa al abrirla</span></span>
@@ -685,7 +687,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
     "problem.title":"By the time a blocklist catches a fake page, the page has usually disappeared.",
     "problem.aria":"Average lifetime of a phishing URL: 5.46 hours. Time until it reaches a blocklist: 4.5 days (108 hours).",
     "problem.life":"Average lifetime of a phishing URL","problem.days":"4.5 days","problem.list":"Until a blocklist includes it",
-    "race.clock":"since the fake page goes live","race.sereno":"Sereno checks it when you open it","race.goal":"target","race.gone":"the page is gone",
+    "race.clock":"since the fake page goes live","race.eq":"= 4.5 days","race.sereno":"Sereno checks it when you open it","race.goal":"target","race.gone":"the page is gone",
     "race.sereno2":"Sereno checks it when you open it (target)","race.life2":"Average lifetime of a phishing URL","race.list2":"Until a blocklist includes it","race.days2":"4.5 days (108 h)",
     "problem.body":"A blocklist needs someone to report the page first. Sereno checks every address the moment you open it, even if nobody has reported it.",
     "problem.src":"Source: Lee et al. (2025). Timeline drawn to scale.",
@@ -829,6 +831,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
   var raceRows = $$("#race .race-row"), raceNum = $("#race-num"), RACE_MAX = 108;
   function renderRace(h){
     raceNum.textContent = h < 10 ? h.toFixed(1) : String(Math.round(h));
+    raceNum.parentNode.classList.toggle("pending", h < RACE_MAX);
     raceRows.forEach(function(row){
       var end = Number(row.getAttribute("data-end"));
       row.style.setProperty("--w", (Math.min(h, end) / RACE_MAX).toFixed(4));
