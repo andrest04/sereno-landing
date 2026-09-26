@@ -8,10 +8,10 @@
 <meta property="og:title" content="Sereno">
 <meta property="og:description" content="Te avisa del phishing antes de que la página cargue.">
 <meta property="og:image" content="assets/screens/advertencia.png">
-<meta name="theme-color" content="#0C0B1F">
+<meta name="theme-color" content="#F8FAFC">
 <script>
 (function(){var t=null;try{t=localStorage.getItem("sereno-theme")}catch(e){}
-if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t)}})();
+document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})();
 </script>
 <link rel="icon" type="image/svg+xml" href="assets/logo-sereno.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -787,7 +787,7 @@ footer ul strong{color:var(--chalk);font-weight:600}
   }
   input.addEventListener("input", updatePrivacy);
 
-  // Theme: system by default, explicit choice wins and is remembered
+  // Theme: light by default, the visitor's choice is remembered
   var root = document.documentElement, themeBtn = $("#theme"), mq = window.matchMedia("(prefers-color-scheme: light)");
   var themeLabels = { es:{ toLight:"Cambiar a tema claro", toDark:"Cambiar a tema oscuro" }, en:{ toLight:EN["theme.toLight"], toDark:EN["theme.toDark"] } };
   function isLight(){ var t = root.getAttribute("data-theme"); return t ? t === "light" : mq.matches; }
@@ -803,14 +803,12 @@ footer ul strong{color:var(--chalk);font-weight:600}
     try { localStorage.setItem("sereno-theme", next); } catch (e) {}
     syncTheme();
   });
-  if (mq.addEventListener) mq.addEventListener("change", syncTheme);
   syncTheme();
 
-  // Initial language: saved choice, then browser language
+  // Initial language: saved choice, otherwise Spanish
   var saved = null;
   try { saved = localStorage.getItem("sereno-lang"); } catch (e) {}
-  var initial = saved || ((navigator.language || "es").toLowerCase().indexOf("es") === 0 ? "es" : "en");
-  setLang(initial);
+  setLang(saved === "en" ? "en" : "es");
 })();
 </script>
 </body>
