@@ -6,7 +6,7 @@
 
 <p align="center">
   Landing page de Sereno, una extensión de Chrome que detecta URLs de phishing antes de que la página cargue.<br>
-  <a href="https://andrest04.github.io/sereno-landing/"><strong>andrest04.github.io/sereno-landing</strong></a>
+  <a href="https://sereno-phishing.github.io/sereno-landing/"><strong>sereno-phishing.github.io/sereno-landing</strong></a>
 </p>
 
 ## Sobre el proyecto
